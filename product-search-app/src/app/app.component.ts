@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-
+import { Response } from '../app/models/response';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,8 @@ export class AppComponent {
 
 
   fileName = '';
-  private url = '/api/v1/product-search';
+ // private url = 'api/product-search';
+  private url = 'http://localhost:3000/product-search';
 
   constructor(private http: HttpClient) {}
 
@@ -33,9 +34,20 @@ export class AppComponent {
 
           formData.append("thumbnail", file);
 
-          const upload$ = this.http.post(this.url, formData);
-upload$.pipe(catchError(this.handleError(this.url, [])));
-          upload$.subscribe();
+          const upload$ = this.http.post<Response[]>(this.url, formData);
+
+console.log('posted');
+
+        upload$.pipe(
+          tap(x=>console.log('length' + x.length)),
+          catchError(this.handleError<Response[]>(this.url, []))
+        ).subscribe(data=>{
+          if(data.length>0) {
+            console.log('https://coop.ch/p/'+data[0].displayName+'#');
+          }
+        }
+        );
+        
       }
   }
 
