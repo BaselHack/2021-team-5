@@ -27,9 +27,12 @@ app.post('/product-search', (req, res) => {
                 res.send(extractProduct(response))
             }
             else {
+                res.send([])
             }
         }
-    );
+    ).catch(err => {
+        res.status(500).send(err.message)
+    });
 })
 
 app.listen(port, () => {
