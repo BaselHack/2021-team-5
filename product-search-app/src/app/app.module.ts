@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 
@@ -19,7 +20,8 @@ import { SearchResultComponent } from './search-result/search-result.component';
   declarations: [
     AppComponent,
     SearchResultsComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
