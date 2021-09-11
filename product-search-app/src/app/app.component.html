@@ -1,3 +1,6 @@
 <p>app component</p>
 
+<!-- on smartphones 'image' will let the browser choose you an image or record it with the camera . Capture enviroment should choose the main camera -->
+<input type="file" accept="image/*" capture="environment" (change)="onFileSelected($event)" >
+
 <router-outlet></router-outlet>
