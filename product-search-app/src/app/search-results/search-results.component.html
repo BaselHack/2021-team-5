@@ -1,0 +1,9 @@
+<h2>Search Results</h2>
+
+<div *ngIf="selectedResult"></div>
+
+<ul class="response-list">
+  <li *ngFor="let response of responseList"  (click)="onSelect(response)" >
+    <search-result [result]="response" ></search-result>
+  </li>
+</ul>

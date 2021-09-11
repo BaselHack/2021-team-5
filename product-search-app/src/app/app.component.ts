@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { Response } from '../app/models/response';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+
 
 @Component({
   selector: 'app-root',
@@ -12,7 +15,7 @@ import { Response } from '../app/models/response';
 export class AppComponent {
   title = 'Product Search';
 
-
+ 
 
   fileName = '';
  // private url = 'api/product-search';
