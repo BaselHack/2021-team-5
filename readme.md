@@ -13,3 +13,10 @@ Product Search project for BaselHack 2021
 
 ### Proxy
 [https://levelup.gitconnected.com/fixing-cors-errors-with-angular-cli-proxy-e5e0ef143f85]
+
+npm install cors
+
+const cors = require('cors');
+app.use(cors({
+    origin: ['https://www.section.io', 'https://www.google.com/']
+}));
