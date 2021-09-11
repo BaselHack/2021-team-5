@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon'; 
 import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatCardModule} from '@angular/material/card'; 
+
+
+
 
 
 @NgModule({
@@ -17,7 +21,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule, MatIconModule, MatToolbarModule
+    HttpClientModule, MatIconModule, MatToolbarModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

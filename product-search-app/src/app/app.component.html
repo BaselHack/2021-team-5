@@ -11,10 +11,18 @@
       </button>
      </mat-toolbar>
 
-  <div class="file-upload">
-    <!-- on smartphones 'image' will let the browser choose you an image or record it with the camera . Capture enviroment should choose the main camera -->
-    <input type="file" accept="image/*" capture="environment" (change)="onFileSelected($event)" >
-  </div>
+
+     <mat-card class="file-upload-card">
+
+
+        <div class="file-upload">
+            <!-- on smartphones 'image' will let the browser choose you an image or record it with the camera . Capture enviroment should choose the main camera -->
+            <input type="file" accept="image/*" capture="environment" (change)="onFileSelected($event)" >
+          </div>
+
+     </mat-card>
+
+
 
 </div>
 <router-outlet></router-outlet>
