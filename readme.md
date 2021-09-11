@@ -9,6 +9,6 @@ Product Search project for BaselHack 2021
 * Create a service principal, download the token, set the environment variable.  
 * Make sure this service principal has access to the bucket with the CSV and the pictures. Otherwise you get a strange ERROR 400. 
 * Run the request to start the training. It will return a request to ask for the status. 
-
+* It seems to be required to put all your products into one 'ProductSet' because you have to provide it in the request. 
 
 
