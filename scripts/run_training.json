@@ -1,0 +1,7 @@
+{
+  "inputConfig": {
+    "gcsSource": {
+      "csvFileUri": "gs://training_data_description/training_data_products.csv"
+    }
+  }
+}
