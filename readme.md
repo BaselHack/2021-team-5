@@ -11,4 +11,5 @@ Product Search project for BaselHack 2021
 * Run the request to start the training. It will return a request to ask for the status. 
 * It seems to be required to put all your products into one 'ProductSet' because you have to provide it in the request. 
 
-
+### Proxy
+[https://levelup.gitconnected.com/fixing-cors-errors-with-angular-cli-proxy-e5e0ef143f85]
