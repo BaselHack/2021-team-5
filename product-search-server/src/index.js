@@ -3,6 +3,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 const getSimilarProductsFile = require('./vision-search.service')
+const cors = require('cors');
+
+app.use(cors({
+    origin: 'http://localhost:4200'
+}));
 
 app.use(express.json())
 app.get('/', (req, res) => {
