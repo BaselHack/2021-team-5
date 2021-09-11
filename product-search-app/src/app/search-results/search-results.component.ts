@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RESPONSE_LIST } from '../mock-results';
+import { SearchService } from '../services/search.service';
 import { Response } from '../../app/models/response';
 
 
@@ -14,15 +14,21 @@ export class SearchResultsComponent implements OnInit {
   responseList:Response[];
   selectedResult?: Response;
 
-  constructor() {
+  constructor(private service: SearchService) {
     this.responseList = [];
    }
 
   ngOnInit(): void {
 
-  this.responseList=RESPONSE_LIST;
+  this.getSearchResults();
 
   }
+
+  getSearchResults() : void {
+    this.service.getSearchResults().subscribe(searchResults => {
+      this.responseList = searchResults;
+    });
+  } 
 
   onSelect(response: Response): void {
     this.selectedResult = response
