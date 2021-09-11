@@ -1,7 +1,7 @@
 const { response } = require('express')
 const express = require('express')
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000;
 const getSimilarProductsFile = require('./vision-search.service')
 const cors = require('cors');
 
@@ -35,6 +35,6 @@ app.post('/product-search', (req, res) => {
     });
 })
 
-app.listen(port, () => {
-  console.log(`Small vision caller is running at ${port}`)
+app.listen(PORT, () => {
+  console.log(`Small vision caller is running at ${PORT}`)
 })
