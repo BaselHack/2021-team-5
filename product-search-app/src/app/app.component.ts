@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'product-search-app';
+  title = 'Product Search';
 
 
 
@@ -27,7 +27,7 @@ export class AppComponent {
 
           formData.append("thumbnail", file);
 
-          const upload$ = this.http.post("/api/thumbnail-upload", formData);
+          const upload$ = this.http.post("/api/v1/product-search", formData);
 
           upload$.subscribe();
       }

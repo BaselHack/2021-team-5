@@ -1,6 +1,20 @@
-<p>app component</p>
+<div class="home">
 
-<!-- on smartphones 'image' will let the browser choose you an image or record it with the camera . Capture enviroment should choose the main camera -->
-<input type="file" accept="image/*" capture="environment" (change)="onFileSelected($event)" >
+    <mat-toolbar>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+         <mat-icon>menu</mat-icon>
+       </button>
+       <span>{{title}}</span>
+       <span class="example-spacer"></span>
+       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+     </mat-toolbar>
 
+  <div class="file-upload">
+    <!-- on smartphones 'image' will let the browser choose you an image or record it with the camera . Capture enviroment should choose the main camera -->
+    <input type="file" accept="image/*" capture="environment" (change)="onFileSelected($event)" >
+  </div>
+
+</div>
 <router-outlet></router-outlet>
