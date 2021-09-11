@@ -3,22 +3,20 @@
     {
       "image": {
         "source": {
-          "gcsImageUri": "gs://test_pictures/20210911_153636[1].jpg"
+          "gcsImageUri": "gs://test_pictures/20210911_153636.jpg"
         }
       },
       "features": [
         {
           "type": "PRODUCT_SEARCH",
-          "maxResults": 5
         }
       ],
       "imageContext": {
         "productSearchParams": {
           "productSet": "projects/emerald-mission-325710/locations/europe-west1/productSets/crisps",
           "productCategories": [
-               "packaged goods"
+               "packagedgoods-v1"
           ]
-		  "filter":""
         }
       }
     }

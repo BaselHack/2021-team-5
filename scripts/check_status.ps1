@@ -2,7 +2,8 @@
 $cred = gcloud auth application-default print-access-token
 $headers = @{ "Authorization" = "Bearer $cred" }
 
-$statusCode = "73d447606a09e1c7"
+$cred
+$statusCode = "f2c20d20c306c9f8"
 
 Invoke-WebRequest `
   -Method GET `
