@@ -28,7 +28,7 @@ export class AppComponent {
           formData.append("thumbnail", file);
 
           const upload$ = this.http.post("/api/v1/product-search", formData);
-
+upload$.pipe().toPromise
           upload$.subscribe();
       }
   }
