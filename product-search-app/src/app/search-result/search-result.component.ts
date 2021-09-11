@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Response } from '../../app/models/response';
 
 @Component({
-  selector: 'search-result',
+  selector: 'app-search-result',
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.scss']
 })

@@ -5,7 +5,7 @@ import { Response } from '../../app/models/response';
 
 
 @Component({
-  selector: 'search-results',
+  selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss']
 })
