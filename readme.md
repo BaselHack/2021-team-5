@@ -25,8 +25,8 @@ Product Search project for BaselHack 2021
 
 
 ### Test deployment
-![Alt text](search-product.svg.svg)
-<img src="../presentation/search-product.svg">
+![file:///C:/git_baselhack_2021/BaselHack_Product_Search_v1/presentation/search-product.svg](search-product.svg)
+<img src="./presentation/search-product.svg">
 
 
 ### Proxy
