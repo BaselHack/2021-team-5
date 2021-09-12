@@ -19,6 +19,7 @@ Product Search project for BaselHack 2021
 ### Technology stack
 * Angular
 * node.js
+* Docker
 * Vision API Product Search from Google Cloud
 
 ### Proxy
