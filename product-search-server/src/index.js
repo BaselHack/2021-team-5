@@ -12,7 +12,10 @@ app.use(cors({
 }));
 
 app.use(express.json())
-app.use(cors());
+app.use(cors({
+    origin: '*'
+}
+));
 app.use(formidableMiddleware())
 app.get('/', (req, res) => {
   res.send('Hello World!')
