@@ -36,18 +36,21 @@ export class SearchService {
     console.log('posted');
 
     return upload$.pipe(
-      map((responseList:Response[]) => responseList.map(response => new SearchResult(response.displayName, response.productCategory, this.getUrl(response)))),
+      map((responseList:Response[]) => responseList.map(response => this.getResult(response))),
     );
 
   }
 
-private getUrl(response: Response) : string {
-  return `https://coop.ch/p/${response.displayName}#`;
-}
-
-  private log(message: string) : void {
-    this.messageService.add(`HeroService: ${message}`);
+  private getResult(response: Response): SearchResult {
+    console.log("displayName:" + response.displayName);
+    let splits = response.displayName.split('|');
+    let id = splits.length > 0 ? splits[0] : response.displayName;
+    let url = `https://coop.ch/p/${id}#`;
+    let name = splits.length > 1 ? splits[1] : response.displayName;
+    return new SearchResult(name, response.productCategory, url);
   }
+
+
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

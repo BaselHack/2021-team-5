@@ -31,16 +31,14 @@ export class AppComponent {
     const file: File = event.target.files[0];
     console.log(file);
 
+    this.responseList=[];
 
     if (file) {
 
       this.fileName = file.name; 
 
       this.searchService.getSearchResults(file).subscribe(data => {
-        if (data.length > 0) {
-          console.log('https://coop.ch/p/' + data[0].displayName + '#');
-          this.fileName = '';
-        } 
+        console.log("data:"+data);
         this.responseList=data;
       }
       );

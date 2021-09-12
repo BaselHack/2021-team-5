@@ -1,9 +1,9 @@
-<div *ngIf="result">
+<div *ngIf="result" class="detail-result">
     <h2>Details: {{result.displayName}}</h2>
     <a href={{result.url}} target="_blank" rel="noopener">
         Open "{{result.url}}"
-    </a>
+    </a><!--
     <div *ngIf="safeUrl">
         <iframe [src]="safeUrl"></iframe>
-    </div>
+    </div>-->
 </div>

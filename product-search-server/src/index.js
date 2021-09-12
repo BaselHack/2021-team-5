@@ -5,7 +5,6 @@ const formidableMiddleware = require('express-formidable');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const getSimilarProductsFile = require('./vision-search.service')
-const cors = require('cors');
 
 app.use(cors({
     origin: 'http://localhost:4200'

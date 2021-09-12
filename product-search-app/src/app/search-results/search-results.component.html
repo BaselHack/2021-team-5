@@ -1,18 +1,15 @@
 <div class="search-results">
-
-    <h2>Search Results</h2>
-
+<!--
     <div *ngIf="selectedResult">
         <app-search-result [result]="selectedResult"></app-search-result>    
     </div>
-    
+  -->
     <mat-list class="result-list">
         <div mat-subheader>Search Results</div>
         <mat-list-item *ngFor="let result of resultList" (click)="onSelect(result)" class="result-list-item" >
-          <mat-icon mat-list-icon>Product</mat-icon>
           <div mat-line>{{result.displayName}}</div>
+          <div mat-line><a href={{result.url}} target="_blank" rel="noopener" class="link">{{result.url}}</a></div>
           <div mat-line> {{result.productCategory}} </div>
-          <div mat-line> (Click) </div>
         </mat-list-item>
       </mat-list>
 
