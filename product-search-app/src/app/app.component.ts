@@ -16,8 +16,8 @@ export class AppComponent {
 
 
   fileName = '';
-  // private url = 'api/product-search';
-  private url = 'http://localhost:3000/product-search';
+ // private url = 'api/product-search';
+  private url = 'https://emerald-mission-325710.ew.r.appspot.com/product-search';
 
   public responseList: SearchResult[];
 
