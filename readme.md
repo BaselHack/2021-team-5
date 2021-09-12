@@ -16,6 +16,11 @@ Product Search project for BaselHack 2021
 
 ## Details
 
+### Technology stack
+* Angular
+* node.js
+* Vision API Product Search from Google Cloud
+
 ### Proxy
 [https://levelup.gitconnected.com/fixing-cors-errors-with-angular-cli-proxy-e5e0ef143f85]
 
