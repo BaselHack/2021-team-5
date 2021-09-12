@@ -44,9 +44,9 @@ export class SearchService {
   private getResult(response: Response): SearchResult {
     console.log("displayName:" + response.displayName);
     let splits = response.displayName.split('|');
-    let id = splits.length > 0 ? splits[0] : response.displayName;
+    let name = splits.length > 0 ? splits[0] : response.displayName;
+    let id = splits.length > 1 ? splits[1] : response.displayName;
     let url = `https://coop.ch/p/${id}#`;
-    let name = splits.length > 1 ? splits[1] : response.displayName;
     return new SearchResult(name, response.productCategory, url);
   }
 
