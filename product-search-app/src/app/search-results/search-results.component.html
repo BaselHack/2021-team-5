@@ -7,9 +7,9 @@
   <h2 mat-subheader>Search Results</h2>
     <div class="result-list">
         <div *ngFor="let result of resultList" (click)="onSelect(result)" class="result-list-item" >
-          <div mat-line><b>{{result.displayName}}</b></div>
-          <div mat-line><a href={{result.url}} target="_blank" rel="noopener" class="link">{{result.url}}</a></div>
-          <div mat-line> {{result.productCategory}} </div>
+          <div mat-line class="search-resul-item-name"><b>{{result.displayName}}</b> | <a href={{result.url}} target="_blank" rel="noopener" class="link">{{result.url}}</a></div>
+          <div mat-line> <img src="{{result.imageUrl1}}" class="result-image" /> <img src="{{result.imageUrl2}}" class="result-image" /> </div>
+
         </div>
       </div>
 

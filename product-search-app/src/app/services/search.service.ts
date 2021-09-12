@@ -47,10 +47,17 @@ export class SearchService {
     let name = splits.length > 0 ? splits[0] : response.displayName;
     let id = splits.length > 1 ? splits[1] : response.displayName;
     let url = `https://coop.ch/p/${id}#`;
-    return new SearchResult(name, response.productCategory, url);
+   // let imageUrl = getImageUrl(name);
+    let imageUrl1 = `https://storage.googleapis.com/training_pictures/${id}_360_23-S.JPG`;
+    let imageUrl2 = `https://storage.googleapis.com/training_pictures/${id}_360_23-S-0.JPG`;
+    return new SearchResult(name, response.productCategory, url, imageUrl1, imageUrl2);
   }
+/*
+  private getImageUrl(string name) : Observable<string> {
+    let uri1 = `https://vision.googleapis.com/v1/projects/emerald-mission-325710/locations/europe-west1/products/${name}/referenceImages`;
 
 
+  }*/
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
