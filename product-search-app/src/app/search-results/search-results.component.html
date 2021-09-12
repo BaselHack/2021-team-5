@@ -6,10 +6,15 @@
         <app-search-result [result]="selectedResult"></app-search-result>    
     </div>
     
-    <ul class="response-list">
-      <li *ngFor="let response of responseList"  (click)="onSelect(response)" >
-        <app-search-result [result]="response" ></app-search-result>
-      </li>
-    </ul>
+    <mat-list class="result-list">
+        <div mat-subheader>Search Results</div>
+        <mat-list-item *ngFor="let result of resultList" (click)="onSelect(result)" class="result-list-item" >
+          <mat-icon mat-list-icon>Product</mat-icon>
+          <div mat-line>{{result.displayName}}</div>
+          <div mat-line> {{result.productCategory}} </div>
+          <div mat-line> (Click) </div>
+        </mat-list-item>
+      </mat-list>
+
 </div>
 

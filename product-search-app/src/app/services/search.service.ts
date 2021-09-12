@@ -36,7 +36,7 @@ export class SearchService {
     console.log('posted');
 
     return upload$.pipe(
-      map((responseList:Response[]) => responseList.map(response => new SearchResult(response.displayName, this.getUrl(response)))),
+      map((responseList:Response[]) => responseList.map(response => new SearchResult(response.displayName, response.productCategory, this.getUrl(response)))),
     );
 
   }

@@ -12,11 +12,11 @@ import { SearchResult } from '../../app/models/searchResult';
 export class SearchResultsComponent implements OnInit {
 
   @Input()
-  responseList:SearchResult[];
+  resultList:SearchResult[];
   selectedResult?: SearchResult;
 
   constructor(private service: SearchService) {
-    this.responseList = [];
+    this.resultList = [];
    }
 
   ngOnInit(): void {

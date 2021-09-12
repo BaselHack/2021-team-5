@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { MessagesComponent } from './messages/messages.component';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -30,7 +31,8 @@ import { MessagesComponent } from './messages/messages.component';
     HttpClientModule,
     MatIconModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule, 
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
