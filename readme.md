@@ -23,6 +23,12 @@ Product Search project for BaselHack 2021
 * Docker
 * Vision API Product Search from Google Cloud
 
+
+### Test deployment
+![Alt text](search-product.svg.svg)
+<img src="../presentation/search-product.svg">
+
+
 ### Proxy
 [https://levelup.gitconnected.com/fixing-cors-errors-with-angular-cli-proxy-e5e0ef143f85]
 
