@@ -8,7 +8,15 @@
     <div class="result-list">
         <div *ngFor="let result of resultList" (click)="onSelect(result)" class="result-list-item" >
           <div mat-line class="search-resul-item-name"><b>{{result.displayName}}</b> | <a href={{result.url}} target="_blank" rel="noopener" class="link">{{result.url}}</a></div>
-          <div mat-line> <img src="{{result.imageUrl1}}" class="result-image" /> <img src="{{result.imageUrl2}}" class="result-image" /> </div>
+          <div mat-line>
+           
+            <img src="{{result.imageUrl1}}" class="result-image" /> <img src="{{result.imageUrl2}}" class="result-image" />
+         <!--
+            <object data="{{result.imageUrl1}}" type="image/png"  class="result-image">
+              <img src="{{result.imageUrl2}}" alt="{{result.displayName}}"  class="result-image">
+            </object>
+          -->
+          </div>
 
         </div>
       </div>

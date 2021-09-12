@@ -14,7 +14,7 @@ export class SearchResultsComponent implements OnInit {
   @Input()
   resultList:SearchResult[];
 
-  
+    
   selectedResult?: SearchResult;
 
   constructor(private service: SearchService) {
