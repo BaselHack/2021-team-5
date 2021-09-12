@@ -22,7 +22,8 @@
 
      </mat-card>
 
-     <mat-card class="search-results-card card">
+
+     <mat-card class="search-results-card card" *ngIf="responseList.length" >
 
       <app-search-results [responseList]="responseList"></app-search-results>
 

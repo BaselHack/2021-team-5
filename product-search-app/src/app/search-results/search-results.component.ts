@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
-import { Response } from '../../app/models/response';
+import { SearchResult } from '../../app/models/searchResult';
 
 
 
@@ -12,8 +12,8 @@ import { Response } from '../../app/models/response';
 export class SearchResultsComponent implements OnInit {
 
   @Input()
-  responseList:Response[];
-  selectedResult?: Response;
+  responseList:SearchResult[];
+  selectedResult?: SearchResult;
 
   constructor(private service: SearchService) {
     this.responseList = [];
@@ -23,7 +23,7 @@ export class SearchResultsComponent implements OnInit {
 
   }
 
-  onSelect(response: Response): void {
+  onSelect(response: SearchResult): void {
     this.selectedResult = response
   }
 }

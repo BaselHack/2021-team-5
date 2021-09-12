@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SearchService } from './services/search.service';
 import { Response } from '../app/models/response';
+import { SearchResult } from './models/searchResult';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class AppComponent {
   // private url = 'api/product-search';
   private url = 'http://localhost:3000/product-search';
 
-  public responseList: Response[];
+  public responseList: SearchResult[];
 
 
   constructor(private searchService: SearchService) { 

@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { SearchResult } from '../models/searchResult';
 
 
 @Injectable({
@@ -18,7 +19,7 @@ export class SearchService {
 
   constructor(private messageService: MessageService, private http: HttpClient) { }
 
-  getSearchResults(file: File): Observable<Response[]> {
+  getSearchResults(file: File): Observable<SearchResult[]> {
     /*
     const r = of(RESPONSE_LIST);
     this.messageService.add('fetched search results');
@@ -29,19 +30,22 @@ export class SearchService {
 
     formData.append("thumbnail", file);
 
-    const upload$ = this.http.post<Response[]>(this.url, formData);
+    const upload$ = this.http.post<Response[]>(this.url, formData)
+    .pipe(      catchError(this.handleError<Response[]>(this.url, []))    );
 
     console.log('posted');
 
-    upload$.pipe(
-      tap(x => console.log('length' + x.length)),
-      catchError(this.handleError<Response[]>(this.url, []))
+    return upload$.pipe(
+      map((responseList:Response[]) => responseList.map(response => new SearchResult(response.displayName, this.getUrl(response)))),
     );
 
-    return upload$;
   }
 
-  private log(message: string) {
+private getUrl(response: Response) : string {
+  return `https://coop.ch/p/${response.displayName}#`;
+}
+
+  private log(message: string) : void {
     this.messageService.add(`HeroService: ${message}`);
   }
 
