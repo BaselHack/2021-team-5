@@ -14,7 +14,7 @@ import { SearchResult } from '../models/searchResult';
 export class SearchService {
 
   // private url = 'api/product-search';
-  private url = 'http://localhost:3000/product-search';
+  private url = 'https://emerald-mission-325710.ew.r.appspot.com/product-search';
 
 
   constructor(private messageService: MessageService, private http: HttpClient) { }
