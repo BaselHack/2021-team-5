@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { Response } from '../../app/models/response';
-import { MessageService } from '../../app/services/message.service';
 
 
 
@@ -12,6 +11,7 @@ import { MessageService } from '../../app/services/message.service';
 })
 export class SearchResultsComponent implements OnInit {
 
+  @Input()
   responseList:Response[];
   selectedResult?: Response;
 
@@ -21,15 +21,7 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit(): void {
 
-  this.getSearchResults();
-
   }
-
-  getSearchResults() : void {
-    this.service.getSearchResults().subscribe(searchResults => {
-      this.responseList = searchResults;
-    });
-  } 
 
   onSelect(response: Response): void {
     this.selectedResult = response
