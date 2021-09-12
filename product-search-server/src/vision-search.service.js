@@ -1,22 +1,24 @@
 const vision = require('@google-cloud/vision');
+const fs = require('fs')
 
 const productSearchClient = new vision.ProductSearchClient();
 const imageAnnotatorClient = new vision.ImageAnnotatorClient();
 
-const getSimilarProductsFile =  async function () {
+const getSimilarProductsFile =  async function (filePath) {
+    console.log(filePath);
   const projectId = 'emerald-mission-325710';
   const location = 'europe-west1';
   const productSetId = 'coop';
   const productCategory = 'packagedgoods-v1';
-  const filePath = 'gs://test_pictures/20210911_165400[1].jpg';
   const filter = '';
   const productSetPath = productSearchClient.productSetPath(
     projectId,
     location,
     productSetId
   );
+  const content = fs.readFileSync(filePath, 'base64');
   const request = {
-    image: {source: {gcsImageUri: filePath}},
+    image: {content: content},
     features: [{type: 'PRODUCT_SEARCH', "maxResults": 1}],
     imageContext: {
       productSearchParams: {
@@ -30,6 +32,7 @@ const getSimilarProductsFile =  async function () {
     requests: [request],
   });
   const results = response['responses'][0]['productSearchResults']['results'];
+  console.log(results);
   return results;
 }
 

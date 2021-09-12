@@ -1,6 +1,8 @@
-const { response } = require('express')
-const express = require('express')
-const app = express()
+const { response } = require('express');
+const express = require('express');
+const cors = require('cors')
+const formidableMiddleware = require('express-formidable');
+const app = express();
 const PORT = process.env.PORT || 3000;
 const getSimilarProductsFile = require('./vision-search.service')
 const cors = require('cors');
@@ -10,6 +12,8 @@ app.use(cors({
 }));
 
 app.use(express.json())
+app.use(cors());
+app.use(formidableMiddleware())
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -20,8 +24,7 @@ const extractProduct= (productResponse) => {
 }
 
 app.post('/product-search', (req, res) => {
-    console.log(req.body)
-    getSimilarProductsFile().then(
+    getSimilarProductsFile(req.files.thumbnail.path).then(
         response => {
             if (response.length > 0) {
                 res.send(extractProduct(response))
